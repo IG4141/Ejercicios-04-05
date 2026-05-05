@@ -1,13 +1,6 @@
 # Actividad 04/05 - POO en JavaScript
 
-En este trabajo resolvi la actividad completa de POO en JavaScript.
-
-## Contenido del repositorio
-
-- `actividad-poo.js`: ejercicios resueltos (Nivel 1 a Nivel 5).
-- `README.md`: explicacion corta y respuestas directas.
-
-## Como ejecutar
+## Ejecución
 
 1. Tener instalado Node.js.
 2. En la terminal, ubicarse en la carpeta del proyecto.
@@ -16,9 +9,6 @@ En este trabajo resolvi la actividad completa de POO en JavaScript.
 ```bash
 node actividad-poo.js
 ```
-
-## Resumen teorico (simple)
-
 ### Que es la POO
 
 La Programacion Orientada a Objetos organiza el codigo en objetos con:
@@ -202,7 +192,3 @@ Tambien agregue validaciones de montos y fondos insuficientes.
 
 3. Que problema resuelve la herencia?
    - Evita repetir codigo que varias clases tienen en comun.
-
-## Frase clave
-
-En JavaScript, por dentro todo gira alrededor de objetos y prototipos.
