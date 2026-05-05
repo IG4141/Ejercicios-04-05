@@ -1,11 +1,11 @@
 # Actividad 04/05 - POO en JavaScript
 
-Este repositorio contiene la actividad completa sobre Programacion Orientada a Objetos (POO) en JavaScript.
+En este trabajo resolvi la actividad completa de POO en JavaScript.
 
 ## Contenido del repositorio
 
-- `actividad-poo.js`: resolucion de todos los ejercicios (Nivel 1 a Nivel 5).
-- `README.md`: explicacion teorica y respuestas para estudiar.
+- `actividad-poo.js`: ejercicios resueltos (Nivel 1 a Nivel 5).
+- `README.md`: explicacion corta y respuestas directas.
 
 ## Como ejecutar
 
@@ -17,11 +17,11 @@ Este repositorio contiene la actividad completa sobre Programacion Orientada a O
 node actividad-poo.js
 ```
 
-## Resumen teorico
+## Resumen teorico (simple)
 
 ### Que es la POO
 
-La Programacion Orientada a Objetos es un paradigma que organiza el codigo en objetos con:
+La Programacion Orientada a Objetos organiza el codigo en objetos con:
 
 - Propiedades (datos)
 - Metodos (acciones)
@@ -39,25 +39,25 @@ const persona = {
 
 ### Importante en JavaScript
 
-JavaScript no es un lenguaje orientado a clases en su base, sino orientado a prototipos.
-Eso significa que los objetos heredan de otros objetos mediante la cadena de prototipos.
+JavaScript no funciona con clases "reales" por dentro, funciona con prototipos.
+O sea, un objeto puede heredar cosas de otro por la cadena de prototipos.
 
 ### Prototipos
 
-Todos los objetos tienen acceso a un prototipo.
+Todos los objetos tienen un prototipo del que heredan metodos.
 
 ```js
 const obj = {};
 obj.toString(); // viene de Object.prototype
 ```
 
-Cadena interna:
+Cadena interna basica:
 
 `obj -> Object.prototype -> null`
 
 ### Funciones constructoras y new
 
-Sirven para crear varios objetos similares.
+Se usan para crear varios objetos parecidos.
 
 ```js
 function Perro(nombre) {
@@ -71,7 +71,7 @@ Perro.prototype.ladrar = function () {
 const perro1 = new Perro("Firulais");
 ```
 
-`new`:
+Que hace `new`:
 
 - Crea un objeto nuevo
 - Asigna `this` al nuevo objeto
@@ -79,7 +79,7 @@ const perro1 = new Perro("Firulais");
 
 ### Clases (ES6)
 
-Son azucar sintactico sobre el sistema de prototipos.
+Las clases son una forma mas prolija de escribir lo mismo (prototipos).
 
 ```js
 class Animal {
@@ -95,7 +95,7 @@ class Animal {
 
 ### Herencia con extends
 
-Permite reutilizar codigo de una clase base.
+Sirve para reutilizar codigo de una clase base.
 
 ```js
 class Gato extends Animal {
@@ -108,7 +108,7 @@ class Gato extends Animal {
 - `extends`: hereda de otra clase
 - `super()`: llama al constructor padre
 
-### Pilares de la POO
+### Pilares de la POO (resumen)
 
 - Encapsulacion: agrupar datos y metodos
 - Abstraccion: mostrar lo necesario y ocultar complejidad
@@ -154,55 +154,55 @@ Persona.prototype.caminar = function () {
   - `retirar()`
   - `verSaldo()`
 
-Incluye validaciones de montos y fondos insuficientes.
+Tambien agregue validaciones de montos y fondos insuficientes.
 
-## Preguntas para estudiar
+## Preguntas para estudiar (respuestas directas)
 
 ### Conceptuales
 
 1. Que es un objeto en JavaScript?
-   - Es una estructura que agrupa datos (propiedades) y comportamiento (metodos) en pares clave-valor.
+   - Es una estructura que guarda datos y funciones en pares clave-valor.
 
 2. Diferencia entre clase y objeto?
-   - Clase: plantilla para crear objetos.
-   - Objeto: instancia concreta creada a partir de una clase o constructor.
+   - Clase: es el molde.
+   - Objeto: es la instancia creada con ese molde.
 
 3. Que es un prototipo?
-   - Es el objeto del que otro objeto hereda propiedades y metodos.
+   - Es el objeto del que otro hereda propiedades y metodos.
 
 4. Que hace `new`?
-   - Crea un nuevo objeto, vincula su prototipo y ejecuta el constructor con `this`.
+   - Crea un objeto nuevo, conecta el prototipo y ejecuta el constructor.
 
 5. Por que JS no es realmente orientado a clases?
-   - Porque la herencia real funciona por prototipos; las clases de ES6 son una sintaxis mas amigable.
+   - Porque por dentro hereda con prototipos, no con clases puras.
 
 ### Tecnicas
 
 1. Diferencia entre metodo dentro del constructor y en `prototype`?
-   - En constructor: cada instancia crea su propia copia del metodo.
-   - En `prototype`: todas las instancias comparten el mismo metodo (mas eficiente en memoria).
+   - En constructor: cada objeto tiene su propia copia del metodo.
+   - En `prototype`: todos los objetos comparten el mismo metodo.
 
 2. Que hace `extends`?
-   - Crea una relacion de herencia entre clases.
+   - Hace que una clase herede de otra.
 
 3. Para que sirve `super()`?
-   - Para llamar al constructor o metodos de la clase padre.
+   - Sirve para llamar al constructor (o metodos) de la clase padre.
 
 4. Que es la `prototype chain`?
-   - Es la cadena de objetos prototipo que JS recorre al buscar una propiedad o metodo.
+   - Es la cadena que JS recorre para encontrar una propiedad o metodo.
 
 ### Pensamiento
 
 1. Cuando conviene usar POO y cuando no?
-   - Conviene cuando hay entidades con estado y comportamiento reutilizable.
-   - No siempre conviene para tareas simples o transformaciones funcionales.
+   - Conviene cuando hay objetos con estado y comportamiento.
+   - No conviene tanto en problemas chicos donde algo simple alcanza.
 
 2. Que ventaja tiene sobre codigo "normal"?
-   - Mejor organizacion, reutilizacion y mantenimiento en proyectos medianos/grandes.
+   - Ordena mejor el codigo y ayuda a reutilizar.
 
 3. Que problema resuelve la herencia?
-   - Evita duplicar codigo compartiendo comportamiento comun entre clases.
+   - Evita repetir codigo que varias clases tienen en comun.
 
-## Frase clave para la escuela
+## Frase clave
 
-En JavaScript todo gira alrededor de objetos y prototipos.
+En JavaScript, por dentro todo gira alrededor de objetos y prototipos.
